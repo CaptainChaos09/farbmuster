@@ -11,6 +11,7 @@
     --text: white;
     --subtext: #aaa;
     --header: #1a1a1a;
+    --button: #2a2a2a;
   }
 
   body.light {
@@ -19,6 +20,7 @@
     --text: #111;
     --subtext: #666;
     --header: white;
+    --button: #eaeaea;
   }
 
   body {
@@ -40,15 +42,22 @@
     top: 0;
   }
 
-  .toggle {
+  .controls {
     position: absolute;
     right: 20px;
-    top: 22px;
+    top: 18px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn {
     padding: 8px 14px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
     font-size: 14px;
+    background: var(--button);
+    color: var(--text);
   }
 
   .grid {
@@ -91,7 +100,6 @@
     margin-bottom: 6px;
   }
 
-  /* Modal */
   .modal {
     position: fixed;
     inset: 0;
@@ -150,7 +158,11 @@
 
 <header>
   🎨 Farbmuster Übersicht
-  <button class="toggle" onclick="toggleMode()">🌗 Modus</button>
+
+  <div class="controls">
+    <button class="btn" onclick="toggleMode()">🌗 Modus</button>
+    <button class="btn" onclick="window.open('https://ndilla.de/', '_blank')">🌐 ndilla.de</button>
+  </div>
 </header>
 
 <div class="grid" id="grid"></div>
@@ -211,7 +223,6 @@ colors.forEach(color => {
       <div>RGB: ${color.rgb}</div>
     </div>
   `;
-
   card.onclick = () => openModal(color);
   grid.appendChild(card);
 });
