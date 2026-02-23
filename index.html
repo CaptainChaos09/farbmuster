@@ -50,6 +50,12 @@
     gap: 10px;
   }
 
+   .back-nav {
+    position: absolute;
+    left: 20px;
+    top: 18px;
+  }
+  
   .btn {
     padding: 8px 14px;
     border-radius: 20px;
@@ -157,6 +163,11 @@
 <body>
 
 <header>
+
+ <div class="back-nav">
+    <button class="btn" onclick="history.back()">← Zurück</button>
+  </div>
+  
   🎨 Farbmuster Übersicht
 
   <div class="controls">
